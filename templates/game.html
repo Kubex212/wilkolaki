@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game View</title>
+</head>
+<body>
+    <h1>Game Players</h1>
+    <ul>
+        {% for player in players %}
+            <li>{{ player.nickname }} - {{ player.role }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

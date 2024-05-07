@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lobby</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Lobby: {{ lobby_name }}</h1>
+    <div>
+        <ul id="player-list">
+            {% for player in players %}
+                <li>{{ player }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <button onclick="leaveLobby('{{ lobby_name }}')">Leave Lobby</button>
+    <script>
+    </script>
+    <form id="gameSettingsForm">
+        <label for="werewolves">Number of Werewolves:</label>
+        <select id="werewolves" name="werewolves">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        
+        <label for="guardians">Number of Guardians:</label>
+        <select id="guardians" name="guardians">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        
+        <label for="villagers">Number of Villagers:</label>
+        <select id="villagers" name="villagers">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        
+        <button type="submit">Start</button>
+    </form>
+    
+    <script src="/static/lobby.js"></script>
+</body>
+</html>
